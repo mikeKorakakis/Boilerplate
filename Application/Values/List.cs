@@ -12,16 +12,16 @@ namespace Application.Values
 {
     public class List
     {
-        
+
         public class Query : IRequest<List<Value>>
-        {           
-      
+        {
+
         }
 
         public class Handler : IRequestHandler<Query, List<Value>>
         {
             private readonly DataContext _context;
-          
+
             public Handler(DataContext context)
             {
                 _context = context;
@@ -29,9 +29,9 @@ namespace Application.Values
 
             public async Task<List<Value>> Handle(Query request, CancellationToken cancellationToken)
             {
-               var values = await  _context.Values.ToListAsync();
+                var values = await _context.Values.ToListAsync();
 
-                 return values;
+                return values;
             }
         }
     }

@@ -1,0 +1,7 @@
+query CurrentUser {
+	currentUser {
+		username
+		displayName
+		token
+	}
+}
